@@ -33,9 +33,7 @@ export class RegistrationTwoPage {
     this.name=navParams.get('name');
     this.email=navParams.get('email');
     this.userType=navParams.get('usertype');
-    this.password=navParams.get('password');
-    
-      
+    this.password=navParams.get('password');     
     }
 
   ionViewDidLoad() {
@@ -67,6 +65,7 @@ if(this.houseName&&this.districtId&&this.street){
   .subscribe(data=>{
   console.log(data);
   this.result=data;  
+  alert(this.result.get('token'))
   });
  
     const toast = this.toastCtrl.create({
@@ -74,9 +73,7 @@ if(this.houseName&&this.districtId&&this.street){
       duration: 3000
     });
     toast.present();
-  
-  
-  
+    
 }
 else{
   const toast = this.toastCtrl.create({
