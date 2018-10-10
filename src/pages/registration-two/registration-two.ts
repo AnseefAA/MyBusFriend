@@ -65,7 +65,7 @@ if(this.houseName&&this.districtId&&this.street){
   .subscribe(data=>{
   console.log(data);
   this.result=data;  
-  alert(this.result.get('token'))
+  alert(this.result)
   });
  
     const toast = this.toastCtrl.create({

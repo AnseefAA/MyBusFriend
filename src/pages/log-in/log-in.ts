@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BusOwnerProfilePage } from '../bus-owner-profile/bus-owner-profile';
 import { ToastController } from 'ionic-angular';
+import { MaxLengthValidator } from '@angular/forms';
+import {Http,Headers} from '@angular/http'
 /**
  * Generated class for the LogInPage page.
  *
@@ -18,7 +20,7 @@ export class LogInPage {
   public username:any;
   public password:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl: ToastController,public http:Http) {
   }
 
   ionViewDidLoad() {
@@ -26,18 +28,41 @@ export class LogInPage {
   }
 login()
 {
-  if(this.username&&this.password){
-    this.navCtrl.push(BusOwnerProfilePage)
-     }
-  else{
+   if(!this.username){
     const toast = this.toastCtrl.create({
-      message: 'empty field is not allowed',
+      message: 'enter the username',
       duration: 3000
     });
     toast.present();
+   
+     }
+     else if(!this.password)
+     {
+      const toast = this.toastCtrl.create({
+        message: 'enter the password',
+        duration: 3000
+      });
+      toast.present();
+     
+     }
+     
+  else{
+    let headers=new Headers();
+    headers.append('Content-Type','application/json');
+  
+    let body={
+      userName:this.username,
+      password:this.password
+    };
+  
+    this.http.post('http://localhost:55307/api/user/login',JSON.stringify(body),{headers:headers})
+    .subscribe(data=>{
+    console.log(data);
+    });
+    this.navCtrl.push(BusOwnerProfilePage)
+
+  }
+    
   }
  
 }
-}
-
-
