@@ -68,13 +68,13 @@ if(this.houseName&&this.districtId&&this.street){
   console.log(data);
   this.result=data;  
   });
-  if(this.result.get('body').get('result')==200){
+ 
     const toast = this.toastCtrl.create({
       message: 'successful',
       duration: 3000
     });
     toast.present();
-  }
+  
   
   
 }
