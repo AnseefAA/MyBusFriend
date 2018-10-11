@@ -19,6 +19,8 @@ import {Http,Headers} from '@angular/http'
 export class LogInPage {
   public username:any;
   public password:any;
+  public url:string;
+  public data:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl: ToastController,public http:Http) {
   }
@@ -57,9 +59,14 @@ login()
   
     this.http.post('http://localhost:55307/api/user/login',JSON.stringify(body),{headers:headers})
     .subscribe(data=>{
+      this.data=data.toString();
+      
     console.log(data);
     });
-    this.navCtrl.push(BusOwnerProfilePage)
+    alert(this.data);
+    this.navCtrl.push(BusOwnerProfilePage,{
+      
+    });
 
   }
     

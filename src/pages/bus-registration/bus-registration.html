@@ -15,16 +15,16 @@
 <ion-content padding>
     <ion-item>
         <ion-label>Bus Name</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]='busname'></ion-input>
       </ion-item>
 
     <ion-item>
       <ion-label>Registration N0:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]='registrationId'></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Total seats</ion-label>
-      <ion-input type="number" value="30"></ion-input>
+      <ion-input type="number" value="30" [(ngModel)]='seats'></ion-input>
     </ion-item>
 
       <button ion-button block block (click)="register()">Next</button>
