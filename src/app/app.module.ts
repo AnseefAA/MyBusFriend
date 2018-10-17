@@ -17,6 +17,8 @@ import { SearchPage } from '../pages/search/search';
 import { BusOwnerProfilePage } from '../pages/bus-owner-profile/bus-owner-profile';
 import { DisplayRoutePage } from '../pages/display-route/display-route';
 import {HttpModule} from '@angular/http'
+import { ReadProvider } from '../providers/read/read';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -30,7 +32,8 @@ import {HttpModule} from '@angular/http'
     BusRegistrationPage,
     RegistrationTwoPage,
     SearchPage,
-    BusOwnerProfilePage,DisplayRoutePage
+    BusOwnerProfilePage,
+    DisplayRoutePage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import {HttpModule} from '@angular/http'
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ReadProvider
   ]
 })
 export class AppModule {}

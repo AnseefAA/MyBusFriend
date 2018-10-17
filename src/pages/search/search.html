@@ -18,23 +18,20 @@
   <ion-list inset>
   <ion-item>
       <ion-label>From</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]='from'></ion-input>
     </ion-item>
     <ion-item>
         <ion-label>To</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]='to'></ion-input>
       </ion-item>
 
 
 <ion-item>
   <ion-label>Time</ion-label>
-  <ion-datetime displayFormat="HH:mm"></ion-datetime>
+  <ion-datetime displayFormat="HH:mm" [(ngModel)]='bustime'></ion-datetime>
 
 </ion-item>
-
       <button ion-button block block (click)="busSearch()">Search</button>
-
-
   </ion-list>
 
 </ion-content>

@@ -15,8 +15,10 @@ import { BusRegistrationPage } from '../bus-registration/bus-registration';
   templateUrl: 'bus-owner-profile.html',
 })
 export class BusOwnerProfilePage {
+  public token:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.token=navParams.get('token');
   }
 
   ionViewDidLoad() {
@@ -24,7 +26,9 @@ export class BusOwnerProfilePage {
   }
 addBus()
 {
-  this.navCtrl.push(BusRegistrationPage)
+  this.navCtrl.push(BusRegistrationPage,{
+    token:this.token
+  })
 }
 viewBus()
 {

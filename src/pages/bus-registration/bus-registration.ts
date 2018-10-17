@@ -18,7 +18,9 @@ export class BusRegistrationPage {
   public registrationId:any;
   public seats:any;
   public ownerid:any;
+  public token:any;
     constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http,public toastCtrl:ToastController) {
+      this.token=navParams.get('token')
   }
 
   ionViewDidLoad() {
@@ -29,13 +31,13 @@ register(){
   if(this.busname&&this.registrationId&&this.seats){
     let headers=new Headers();
     headers.append('Content-Type','application/json');
+    headers.append('Authorization','Bearer '+this.token);
   
     let body={
       busname:this.busname,
     registrationId:this.registrationId,
     seats:this.seats,
-    pownerId:this.ownerid,
-        };
+           };
   
     this.http.post('http://localhost:55307/api/buses/addbus',JSON.stringify(body),{headers:headers})
     .subscribe(data=>{

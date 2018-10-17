@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import {DisplayRoutePage} from '../display-route/display-route'
 /**
  * Generated class for the SearchPage page.
@@ -14,14 +14,41 @@ import {DisplayRoutePage} from '../display-route/display-route'
   templateUrl: 'search.html',
 })
 export class SearchPage {
+  public from:any;
+  public to:any;
+  public bustime:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl:ToastController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
   }
 busSearch(){
-  this.navCtrl.push(DisplayRoutePage)
+  if(!this.from){
+    const toast = this.toastCtrl.create({
+      message: 'enter the source',
+      duration: 3000
+    });
+    toast.present();    
+  }
+  else if(!this.to){
+    const toast = this.toastCtrl.create({
+      message: 'enter the destination',
+      duration: 3000
+    });
+    toast.present();  
+  }
+  else if(!this.bustime){
+    const toast = this.toastCtrl.create({
+      message: 'specify the time',
+      duration: 3000
+    });
+    toast.present();  
+  }
+  else{
+    this.navCtrl.push(DisplayRoutePage)
+  }
+  
 }
 }
