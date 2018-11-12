@@ -1,0 +1,33 @@
+<!--
+  Generated template for the StopPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>stop</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list insert>
+      <ion-item>
+          <ion-label stacked>Select the route</ion-label>
+          <ion-select [(ngModel)]="route" interface="action-sheet" (ionChange)="setRoute(route);">
+            <ion-option  ion-item *ngFor="let item of items" >{{item.text}}</ion-option>
+            
+           
+          </ion-select>
+        </ion-item>
+    <ion-item>
+        <ion-label stacked>Enter the number of stops</ion-label>
+        <ion-input type="text" [(ngModel)]='stopCount'></ion-input>
+      </ion-item>
+      
+        <button ion-button block block (click)="addStop()">Add</button>
+      </ion-list>
+</ion-content>

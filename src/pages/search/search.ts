@@ -47,7 +47,11 @@ busSearch(){
     toast.present();  
   }
   else{
-    this.navCtrl.push(DisplayRoutePage)
+    this.navCtrl.push(DisplayRoutePage,{
+      from:this.from,
+      to:this.to,
+      time:this.bustime
+    })
   }
   
 }

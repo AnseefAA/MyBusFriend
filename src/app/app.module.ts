@@ -6,7 +6,6 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { DetailPage } from '../pages/detail/detail';
 import { UserRegistrationPage } from '../pages/user-registration/user-registration';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,6 +17,18 @@ import { BusOwnerProfilePage } from '../pages/bus-owner-profile/bus-owner-profil
 import { DisplayRoutePage } from '../pages/display-route/display-route';
 import {HttpModule} from '@angular/http'
 import { ReadProvider } from '../providers/read/read';
+import { StaffProfilePage } from '../pages/staff-profile/staff-profile';
+import { DriverProfilePage } from '../pages/driver-profile/driver-profile';
+import { RoutePage} from '../pages/route/route';
+import {StopPage} from '../pages/stop/stop';
+import { OwnerValidatePage} from '../pages/owner-validate/owner-validate';
+import { ValidateSpecificOwnerPage} from '../pages/validate-specific-owner/validate-specific-owner';
+import { ValidateSpecificBusPage } from '../pages/validate-specific-bus/validate-specific-bus';
+import { ValidateBusPage } from '../pages/validate-bus/validate-bus';
+import { ChangeOwnerPage } from '../pages/change-owner/change-owner';
+import { AddStopsPage } from '../pages/add-stops/add-stops';
+import { DisplayBusPage } from '../pages/display-bus/display-bus';
+import { DisplayBusForDriversPage } from '../pages/display-bus-for-drivers/display-bus-for-drivers';
 
 @NgModule({
   declarations: [
@@ -26,14 +37,16 @@ import { ReadProvider } from '../providers/read/read';
     ContactPage,
     HomePage,
     TabsPage,
-    DetailPage,
     UserRegistrationPage,
     LogInPage,
     BusRegistrationPage,
     RegistrationTwoPage,
-    SearchPage,
-    BusOwnerProfilePage,
-    DisplayRoutePage
+    SearchPage,ChangeOwnerPage,
+    BusOwnerProfilePage,DisplayBusForDriversPage,
+    DisplayRoutePage,ValidateBusPage,
+    StaffProfilePage,RoutePage,DisplayBusPage,
+    DriverProfilePage,StopPage,OwnerValidatePage,
+    ValidateSpecificOwnerPage,ValidateSpecificBusPage,AddStopsPage
   ],
   imports: [
     BrowserModule,
@@ -47,13 +60,16 @@ import { ReadProvider } from '../providers/read/read';
     ContactPage,
     HomePage,
     TabsPage,
-    DetailPage,
     UserRegistrationPage,
     LogInPage,
     BusRegistrationPage,
-    RegistrationTwoPage,
+    RegistrationTwoPage,DisplayBusForDriversPage,
     SearchPage,BusOwnerProfilePage,
-    DisplayRoutePage
+    DisplayRoutePage,DriverProfilePage,
+    StaffProfilePage,StopPage,OwnerValidatePage,
+    RoutePage,DisplayBusPage,
+    ValidateSpecificOwnerPage,ValidateSpecificBusPage,
+    ValidateBusPage,ChangeOwnerPage,AddStopsPage
   ],
   providers: [
     StatusBar,

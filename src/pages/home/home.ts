@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { DetailPage } from '../detail/detail';
 import { LogInPage } from '../log-in/log-in';
 import { SearchPage } from '../search/search';
 import { UserRegistrationPage } from '../user-registration/user-registration';

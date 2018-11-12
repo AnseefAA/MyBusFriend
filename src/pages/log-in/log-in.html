@@ -15,16 +15,17 @@
 
 <ion-content padding>
   <ion-item>
-      <ion-label>Email Id</ion-label>
+      <ion-label stacked>Email Id</ion-label>
       <ion-input type="text" [(ngModel)]='username'></ion-input>
     </ion-item>
 
   <ion-item>
-    <ion-label>Password</ion-label>
+    <ion-label stacked>Password</ion-label>
     <ion-input type="password"[(ngModel)]='password'></ion-input>
   </ion-item>
 
     <button ion-button block block (click)="login()">Next</button>
+    <button ion-button block block (click)="test()">Test</button>
 
 
 </ion-content>

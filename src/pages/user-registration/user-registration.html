@@ -16,25 +16,25 @@
 <ion-content padding>  
       <ion-list insert>
           <ion-item>
-              <ion-label>Name</ion-label>
+              <ion-label stacked>Name</ion-label>
               <ion-input type="text" [(ngModel)]="reg_name"></ion-input>
           </ion-item>
          
          
 
             <ion-item>
-                <ion-label>Email Id</ion-label>
+                <ion-label stacked>Email Id</ion-label>
                 <ion-input  type="email" [(ngModel)]="reg_email"></ion-input>
               </ion-item>
              
                 
         
             <ion-item>
-              <ion-label>Password</ion-label>
+              <ion-label stacked>Password</ion-label>
               <ion-input type="password" [(ngModel)]="reg_password"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label>UserType</ion-label>
+                <ion-label stacked>UserType</ion-label>
                 <ion-select item='usertype' [(ngModel)]="reg_usertype" interface="action-sheet" (ionChange)="monthfilter(reg_usertype);">
                   <ion-option value="0">Bus owner</ion-option>
                   <ion-option value="1">Driver</ion-option>

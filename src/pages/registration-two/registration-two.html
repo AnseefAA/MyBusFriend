@@ -16,20 +16,20 @@
 <ion-content padding>
   <ion-list inset>
   <ion-item>
-      <ion-label>House Name</ion-label>
+      <ion-label stacked>House Name</ion-label>
       <ion-input type="text" [(ngModel)]='houseName'></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label>Street</ion-label>
+        <ion-label stacked>Street</ion-label>
         <ion-input type="text" [(ngModel)]='street'></ion-input>
       </ion-item>
 
     <ion-item>
-      <ion-label>City</ion-label>
+      <ion-label stacked>City</ion-label>
       <ion-input type="text" [(ngModel)]='city'></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>District</ion-label>
+      <ion-label stacked>District</ion-label>
       <ion-select [(ngModel)]="districtId" interface="action-sheet" (ionChange)="setGender(districtId);">
         <ion-option value="0"> Kasaragod</ion-option>
         <ion-option value="1">Kannur</ion-option>
@@ -50,17 +50,17 @@
     </ion-item>
 
     <ion-item>
-        <ion-label>Adhar id</ion-label>
+        <ion-label stacked>Adhar id</ion-label>
         <ion-input type="text" [(ngModel)]='adharId'></ion-input>
       </ion-item>
       <ion-item>
-          <ion-label>Contact</ion-label>
+          <ion-label stacked>Contact</ion-label>
           <ion-input type="number" [(ngModel)]='phoneNumber'></ion-input>
 
         </ion-item>
 
         <ion-item>
-          <ion-label>Gender</ion-label>
+          <ion-label stacked>Gender</ion-label>
           <ion-select [(ngModel)]="gender" interface="action-sheet" (ionChange)="setGender(gender);">
             <ion-option value="0">Male</ion-option>
             <ion-option value="1">Female</ion-option>

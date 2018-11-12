@@ -14,19 +14,24 @@
 
 <ion-content padding>
     <ion-item>
-        <ion-label>Bus Name</ion-label>
+        <ion-label stacked>Bus Name</ion-label>
         <ion-input type="text" [(ngModel)]='busname'></ion-input>
       </ion-item>
 
     <ion-item>
-      <ion-label>Registration N0:</ion-label>
+      <ion-label stacked>Registration N0:</ion-label>
       <ion-input type="text" [(ngModel)]='registrationId'></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Total seats</ion-label>
+        <ion-label stacked>Route</ion-label>
+        <ion-select [(ngModel)]="routeName" interface="action-sheet" (ionChange)="setRouteId(routeName);">
+          <ion-option  ion-item *ngFor="let item of items" >{{item.show}}</ion-option>        
+        </ion-select>
+      </ion-item>
+    <ion-item>
+      <ion-label stacked>Total seats</ion-label>
       <ion-input type="number" value="30" [(ngModel)]='seats'></ion-input>
     </ion-item>
 
       <button ion-button block block (click)="register()">Next</button>
-
 </ion-content>

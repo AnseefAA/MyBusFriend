@@ -14,7 +14,13 @@
 
 
 <ion-content padding>
-    <button ion-button block color="light" (click)="addBus()"  block >Add Bus</button>
-  <button ion-button block color="light" (click)="viewBus()"  block >View Bus</button>
+    <ion-item>
+        <button ion-button item-right outline icon-right  (click)="logOut()">Log out</button>
+      </ion-item>
+  <button ion-button block (click)="addBus()" clear >Add Bus</button>
+  <button ion-button block (click)="viewBus()" color="secondary" clear>View Bus</button>
+  <button ion-button block (click)="delBus()" clear>Remove Bus</button>
+  
 
+  
 </ion-content>

@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BusOwnerProfilePage } from '../bus-owner-profile/bus-owner-profile';
 import { ToastController } from 'ionic-angular';
-import { MaxLengthValidator } from '@angular/forms';
-import {Http,Headers,Response} from '@angular/http'
-import {ReadProvider } from '../../providers/read/read'
+//import { MaxLengthValidator } from '@angular/forms';
+import {Http,Headers,Response} from '@angular/http';
+import {DriverProfilePage} from '../driver-profile/driver-profile';
+import {StaffProfilePage}from '../staff-profile/staff-profile';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { ChangeOwnerPage } from '../change-owner/change-owner';
 /**
  * Generated class for the LogInPage page.
  *
@@ -26,9 +29,6 @@ export class LogInPage {
   public data:JSON;
   public x:NavParams;
   public msg:NavParams;
-  
-
-
   constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl: ToastController,public http:Http) {
   
 }
@@ -36,6 +36,11 @@ export class LogInPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LogInPage');
   }
+  test(){
+    this.navCtrl.push(ChangeOwnerPage)
+  }
+
+  
 login()
 {
    if(!this.username){
@@ -49,7 +54,7 @@ login()
      else if(!this.password)
      {
       const toast = this.toastCtrl.create({
-        message: 'enter the password',
+        message: 'enter the password ',
         duration: 3000
       });
       toast.present();
@@ -70,16 +75,30 @@ login()
    .subscribe(data=>{console.log(data);
     this.msg=data;
     console.log(this.msg.data.accessToken);
-    this.navCtrl.push(BusOwnerProfilePage,{
-      token:this.msg.data.accessToken
-      
+    if(this.msg.data.userRole==0)
+        this.navCtrl.push(BusOwnerProfilePage,{
+      token:this.msg.data.accessToken      
     });
+    else if(this.msg.data.userRole==1)
+    {
+        this.navCtrl.push(DriverProfilePage,{
+      token:this.msg.data.accessToken      
+    });}
+    else if(this.msg.data.userRole==2){
+      this.navCtrl.push(StaffProfilePage,{
+      token:this.msg.data.accessToken      
+    });
+    
+  }
+  else{
+    const toast = this.toastCtrl.create({
+      message: 'invalid login',
+      duration: 3000
+    });
+    toast.present();
+   }
   }
    );
-    
-   
-   
-
   }
     
   }

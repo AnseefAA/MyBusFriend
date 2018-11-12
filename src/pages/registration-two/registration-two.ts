@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import {Http,Headers} from '@angular/http'
+import { HomePage } from '../home/home';
 /**
  * Generated class for the RegistrationTwoPage page.
  *
@@ -54,7 +55,7 @@ if(this.houseName&&this.districtId&&this.street){
   password:this.password,
   houseName:this.houseName,
   city:this.city,
-  street:this.city,
+  street:this.street,
   districtId:this.districtId,
   adharId:this.adharId,
   phoneNumber:this.phoneNumber,
@@ -73,6 +74,7 @@ if(this.houseName&&this.districtId&&this.street){
       duration: 3000
     });
     toast.present();
+    this.navCtrl.push(HomePage);
     
 }
 else{
